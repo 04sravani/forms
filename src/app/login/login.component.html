@@ -4,7 +4,7 @@
         class="form-control" name="myname" #myname="ngModel" 
         [ngModel] placeholder="UserName" required>
         <div class="alert alert-danger" *ngIf = "myname.invalid&&myname.touched">
-           please enter the name 
+           please enter the your full name
         </div>
         <input type="password" 
         class="form-control" name="mypassword" #mypassword="ngModel" minlenth="6"
