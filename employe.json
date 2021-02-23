@@ -1,0 +1,27 @@
+[
+    {
+        "firstname":"yedavelli",
+        "lastname":"sravani",
+        "id":101,
+        "salary":100000
+    },
+    {
+        "firstname":"abc",
+        "lastname":"sony",
+        "id":102,
+        "salary":200000
+    },
+    {
+        "firstname":"xyz",
+        "lastname":"sruthi",
+        "id":103,
+        "salary":300000
+    },
+    {
+        "firstname":"ysr",
+        "lastname":"kruthika",
+        "id":104,
+        "salary":300000
+    }
+]
+

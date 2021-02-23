@@ -1,0 +1,19 @@
+<div class="container">
+    <form #f="ngForm">
+        <input type="text" 
+        class="form-control" name="myname" #myname="ngModel" 
+        [ngModel] placeholder="UserName" required>
+        <div class="alert alert-danger" *ngIf = "myname.invalid&&myname.touched">
+           please enter the name 
+        </div>
+        <input type="password" 
+        class="form-control" name="mypassword" #mypassword="ngModel" minlenth="6"
+        [ngModel] placeholder="password" required>
+        <div class="alert alert-danger" *ngIf="mypassword.errors?.required&&mypassword.touched">
+            password required
+        </div>
+        <div class="alert alert-danger" *ngIf="mypassword.errors?.minlenth&&mypassword.touched">
+            password length should be atleast 6 character
+        </div>
+    </form>
+</div>

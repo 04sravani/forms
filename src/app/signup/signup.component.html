@@ -1,0 +1,42 @@
+<div class="container">
+    <form #f="ngForm">
+        <input type="text" 
+        class="form-control" name="myname" #myname="ngModel" 
+        [ngModel] placeholder="UserName" required>
+        <div class="alert alert-danger" *ngIf = "myname.invalid&&myname.touched">
+           please enter the name 
+        </div>
+        <input type="email"
+         class="form-control" name="myemail" email #myemail="ngModel"
+         [ngModel] placeholder="email" required>
+         <div class="alert alert-danger" *ngIf="myemail.errors?.required&&myemail.touched">
+             email is required
+         </div>
+         <div class="alert alert-danger" *ngIf="myemail.errors?.email&&myemail.touched">
+            email should be ex:-abc@gmail.com
+        </div>
+        <input type="password" 
+        class="form-control" name="mypassword" #mypassword="ngModel" minlenth="6"
+        [ngModel] placeholder="password" required>
+        <div class="alert alert-danger" *ngIf="mypassword.errors?.required&&mypassword.touched">
+            password required
+        </div>
+        <div class="alert alert-danger" *ngIf="mypassword.errors?.minlenth&&mypassword.touched">
+            password length should be atleast 6 character
+        </div>
+        <input type="password"
+         class="form-control" name="myconfirm" #myconfirm="ngModel"
+          [ngModel] placeholder="confirm password" required>
+          <div class="alert alert-danger"*ngIf="myconfirm.errors?.required&&myconfirm.touched">
+              confirm password should be required
+          </div>
+          <div class="alert alert-danger"*ngIf="mypassword.value!==myconfirm.value &&myconfirm.touched">
+            password and confirm password should be same
+        </div>
+        <button type="button" class="btn btn-primary" [disabled]="!f.valid"> submit</button>
+        <button type="button" class="btn btn-info" (click)="f.resetForm()"> reset</button>
+    </form>
+    <button (click)="test(f)">click me</button>
+       
+</div>
+
