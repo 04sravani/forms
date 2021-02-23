@@ -10,7 +10,7 @@
         class="form-control" name="mypassword" #mypassword="ngModel" minlenth="6"
         [ngModel] placeholder="password" required>
         <div class="alert alert-danger" *ngIf="mypassword.errors?.required&&mypassword.touched">
-            password required
+            password required to this
         </div>
         <div class="alert alert-danger" *ngIf="mypassword.errors?.minlenth&&mypassword.touched">
             password length should be atleast 6 character
